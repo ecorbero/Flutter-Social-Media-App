@@ -1,10 +1,13 @@
 import 'package:flutter/material.dart';
 import 'package:social_media/ui/widgets/widgets.dart';
 
-void modalSelectPicture({ required BuildContext context, required String title, Function()? onPressedImage, Function()? onPressedPhoto }) {
-
+void modalSelectPicture(
+    {required BuildContext context,
+    required String title,
+    Function()? onPressedImage,
+    Function()? onPressedPhoto}) {
   showModalBottomSheet(
-    context: context, 
+    context: context,
     barrierColor: Colors.black12,
     backgroundColor: Colors.transparent,
     shape: RoundedRectangleBorder(borderRadius: BorderRadius.circular(25.0)),
@@ -12,9 +15,7 @@ void modalSelectPicture({ required BuildContext context, required String title, 
       height: 170,
       margin: const EdgeInsets.only(left: 10.0, right: 10.0, bottom: 20.0),
       decoration: BoxDecoration(
-        color: Colors.white,
-        borderRadius: BorderRadius.circular(25.0)
-      ),
+          color: Colors.white, borderRadius: BorderRadius.circular(25.0)),
       child: Padding(
         padding: const EdgeInsets.all(20.0),
         child: Column(
@@ -25,46 +26,44 @@ void modalSelectPicture({ required BuildContext context, required String title, 
             SizedBox(
               width: double.infinity,
               child: TextButton(
-                onPressed: onPressedImage, 
-                style: TextButton.styleFrom(
-                  padding: const EdgeInsets.only(left: 0, top: 10, bottom: 10),
-                  primary: Colors.grey
-                ),
-                child: Align(
-                  alignment: Alignment.centerLeft,
-                  child: Row(
-                    children: const [
-                      Icon(Icons.wallpaper_rounded, color: Colors.black87),
-                      SizedBox(width: 10.0),
-                      TextCustom(text: 'Seleccionar de galeria', fontSize: 17),
-                    ],
-                  ))
-              ),
+                  onPressed: onPressedImage,
+                  style: TextButton.styleFrom(
+                      foregroundColor: Colors.grey,
+                      padding:
+                          const EdgeInsets.only(left: 0, top: 10, bottom: 10)),
+                  child: Align(
+                      alignment: Alignment.centerLeft,
+                      child: Row(
+                        children: const [
+                          Icon(Icons.wallpaper_rounded, color: Colors.black87),
+                          SizedBox(width: 10.0),
+                          TextCustom(
+                              text: 'Seleccionar de galeria', fontSize: 17),
+                        ],
+                      ))),
             ),
             SizedBox(
               width: double.infinity,
               child: TextButton(
-                onPressed: onPressedPhoto, 
-                style: TextButton.styleFrom(
-                  padding: const EdgeInsets.only(left: 0, top: 10, bottom: 10),
-                  primary: Colors.grey
-                ),
-                child: Align(
-                  alignment: Alignment.centerLeft,
-                  child: Row(
-                    children: const [
-                      Icon(Icons.photo_camera_outlined, color: Colors.black87),
-                      SizedBox(width: 10.0),
-                      TextCustom(text: 'Tomar una foto', fontSize: 17),
-                    ],
-                  ))
-              ),
+                  onPressed: onPressedPhoto,
+                  style: TextButton.styleFrom(
+                      foregroundColor: Colors.grey,
+                      padding:
+                          const EdgeInsets.only(left: 0, top: 10, bottom: 10)),
+                  child: Align(
+                      alignment: Alignment.centerLeft,
+                      child: Row(
+                        children: const [
+                          Icon(Icons.photo_camera_outlined,
+                              color: Colors.black87),
+                          SizedBox(width: 10.0),
+                          TextCustom(text: 'Tomar una foto', fontSize: 17),
+                        ],
+                      ))),
             ),
           ],
         ),
       ),
     ),
   );
-
-
 }
